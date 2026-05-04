@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags -->
+  <title>App per Progettare Casa Online Gratis – Software 2D e 3D per Interni</title>
+  <meta name="description" content="Progettare casa non è mai stato così semplice. Usa il nostro strumento online gratuito per creare planimetrie 2D e visualizzarle in 3D. Nessun download richiesto.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://progettare-casa.it/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="App per Progettare Casa Online Gratis – Software 2D e 3D">
+  <meta property="og:description" content="Crea la planimetria della tua casa online, gratis. Strumento 2D e 3D per interni senza download.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://progettare-casa.it/">
+  <meta property="og:site_name" content="Progettare-Casa">
+
+  <!-- JSON-LD: SoftwareApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Progettare-Casa",
+    "url": "https://progettare-casa.it/",
+    "applicationCategory": "DesignApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR"
+    },
+    "description": "Strumento online gratuito per progettare casa: crea planimetrie 2D e visualizzale in 3D direttamente nel browser.",
+    "featureList": [
+      "Pianificazione 2D in scala",
+      "Visualizzazione 3D",
+      "Libreria di mobili (300+ modelli)",
+      "Catalogo texture e materiali (1000+)",
+      "Nessun download richiesto"
+    ],
+    "publisher": {
+      "@type": "Organization",
+      "name": "Progettare-Casa",
+      "url": "https://progettare-casa.it/"
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: HowTo -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Come progettare casa passo dopo passo",
+    "description": "Guida per creare una planimetria 2D della tua casa con lo strumento online Progettare-Casa.",
+    "step": [
+      { "@type": "HowToStep", "position": 1, "name": "Disegna le pareti", "text": "Definisci le dimensioni della stanza in metri quadri e disegna le pareti con precisione." },
+      { "@type": "HowToStep", "position": 2, "name": "Aggiungi finestre e porte", "text": "Posiziona porte e finestre nelle pareti per ottenere una planimetria 2D realistica." },
+      { "@type": "HowToStep", "position": 3, "name": "Posiziona i mobili", "text": "Scegli i mobili dalla libreria di arredamento e sistemali con drag and drop." },
+      { "@type": "HowToStep", "position": 4, "name": "Aggiungi decorazioni e texture", "text": "Personalizza pavimenti, pareti e mobili con texture e materiali dal catalogo." },
+      { "@type": "HowToStep", "position": 5, "name": "Salva e scarica il progetto", "text": "Esporta la planimetria e visualizza lo spazio in 3D per condividerla con i professionisti." }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "È gratuito usare il pianificatore di ambienti online?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sì, Progettare-Casa è completamente gratuito. Non è necessario scaricare software: funziona direttamente nel browser." }
+      },
+      {
+        "@type": "Question",
+        "name": "Posso usare il software per progettare casa su Mac e Windows?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sì. Lo strumento è compatibile con tutti i sistemi operativi, inclusi Windows, Mac e Linux. È sufficiente un browser moderno." }
+      },
+      {
+        "@type": "Question",
+        "name": "Posso creare una planimetria 3D?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sì. Dopo aver disegnato la planimetria 2D, puoi visualizzare lo spazio in 3D per avere un'idea realistica del risultato finale." }
+      },
+      {
+        "@type": "Question",
+        "name": "Progettare-Casa è adatto ai professionisti come architetti e interior designer?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Assolutamente. Architetti, interior designer e geometri usano Progettare-Casa per comunicare idee di design ai clienti e condividere planimetrie." }
+      },
+      {
+        "@type": "Question",
+        "name": "Posso progettare ogni tipo di stanza?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sì: camera da letto, cucina, soggiorno, cameretta, bagno e studio. Ogni tipo di stanza ha elementi dedicati nel catalogo." }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Manrope font (matches raum-planer-online.de) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/progettare-casa.css">
+</head>
+<body class="page-hero">
+
+<!-- ═══════════════════════════════════════════════
+     HEADER
+═══════════════════════════════════════════════ -->
+<header>
+  <nav class="site-nav" aria-label="Navigazione principale">
+    <a href="index.html" class="logo">Progettare-Casa</a>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" aria-label="Apri menu">
+    <label for="nav-toggle" class="nav-toggle-label" aria-label="Menu">
+      <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24"
+           fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </label>
+
+    <ul class="nav-links">
+      <li><a href="#come-funziona">Come funziona</a></li>
+      <li><a href="#guida">Guida</a></li>
+      <li><a href="#stanze">Stanze</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="chi-siamo.html">Chi siamo</a></li>
+      <li><a href="contatti.html">Contatti</a></li>
+      <li><a href="#inizia" class="nav-cta">Inizia gratis</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ═══════════════════════════════════════════════
+     MAIN
+═══════════════════════════════════════════════ -->
+<main>
+
+  <!-- ── Block 1: Hero ─────────────────────────────────────── -->
+  <section class="hero" id="hero">
+    <div class="hero-inner">
+
+      <!-- room.webp as CSS background with gradient overlays -->
+      <div class="hero-room-img" aria-hidden="true"></div>
+
+      <!-- Text content (right column) -->
+      <div class="hero-text">
+        <h1 class="hero-title">Progettare Casa Online</h1>
+        <p class="hero-subtitle">
+          Progettare-Casa è un moderno strumento online che rende autonoma la
+          progettazione degli interni. Crea prima una precisa
+          planimetria 2D della tua casa e visualizzala come
+          modellazione 3D realistica nel browser. Sperimenta diverse idee
+          di arredamento – dalla disposizione dei mobili al rendering 3D
+          dei tuoi spazi abitativi.
+        </p>
+        <a href="#come-funziona" class="btn-blue" id="inizia">
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+          Inizia a progettare gratis
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Trust Bar ──────────────────────────────────────────── -->
+  <div class="trust-bar">
+    <div class="trust-bar-inner">
+      <div class="trust-item">
+        <span class="trust-num">50.000+</span>
+        <span class="trust-label">Utenti attivi</span>
+      </div>
+      <div class="trust-item">
+        <div class="stars">
+          <svg class="icon" role="img" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><title>Stella</title><polygon points="12 2 15 9 22 9 17 14 18 21 12 17 6 21 7 14 2 9 9 9"/></svg>
+          <svg class="icon" role="img" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><title>Stella</title><polygon points="12 2 15 9 22 9 17 14 18 21 12 17 6 21 7 14 2 9 9 9"/></svg>
+          <svg class="icon" role="img" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><title>Stella</title><polygon points="12 2 15 9 22 9 17 14 18 21 12 17 6 21 7 14 2 9 9 9"/></svg>
+          <svg class="icon" role="img" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><title>Stella</title><polygon points="12 2 15 9 22 9 17 14 18 21 12 17 6 21 7 14 2 9 9 9"/></svg>
+          <svg class="icon" role="img" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><title>Stella</title><polygon points="12 2 15 9 22 9 17 14 18 21 12 17 6 21 7 14 2 9 9 9"/></svg>
+        </div>
+        <span class="trust-label">4,8 / 5 — Valutazione media</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-num">300+</span>
+        <span class="trust-label">Modelli di mobili</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-num">1.000+</span>
+        <span class="trust-label">Texture e materiali</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Advantage: Perché sceglierci ─────────────────────── -->
+  <section class="advantage-section">
+    <div class="container">
+      <h2 class="advantage-title">Usa il pianificatore di ambienti per la tua casa da sogno</h2>
+      <div class="advantage-group">
+
+        <div class="advantage-grid">
+
+          <div class="advantage-item">
+            <p class="advantage-item-desc"><strong>Trasloco:</strong> Pianifica il nuovo spazio prima di acquistare i mobili e risparmia tempo e denaro. Confronta diversi layout e trova la disposizione perfetta senza spostare nulla.</p>
+          </div>
+
+          <div class="advantage-item">
+            <p class="advantage-item-desc"><strong>Ristrutturazione:</strong> Presenta il progetto al geometra o all'impresa edile. La planimetria con dimensioni precise trasmette l'idea progettuale all'architetto o al geometra. Per il bonus ristrutturazione e il permesso di costruire servono però elaborati firmati da un ingegnere o geometra abilitato iscritto all'albo.</p>
+          </div>
+
+          <div class="advantage-item">
+            <p class="advantage-item-desc"><strong>Fai-da-te e hobbisti:</strong> Per chi ama progettare in autonomia: sperimenta diverse disposizioni di mobili, esplora il design parametrico e trova la soluzione perfetta per ogni stanza.</p>
+          </div>
+
+          <div class="advantage-item">
+            <p class="advantage-item-desc"><strong>Agenti immobiliari e sviluppatori:</strong> Mostra ai clienti le potenzialità di ogni spazio con planimetrie chiare e rendering 3D< degli interni. Semplifica le trattative e accelera le vendite.</p>
+          </div>
+
+        </div><!-- /advantage-grid -->
+
+        <!-- Isometric room image with blue glow -->
+        <div class="advantage-img" aria-hidden="true"></div>
+
+      </div><!-- /advantage-group -->
+    </div>
+  </section>
+
+  <!-- ── Block 2: Come funziona ─────────────────────────────── -->
+  <section class="func-section" id="come-funziona">
+    <div class="container">
+      <h2 class="func-title">Prova il pianificatore di ambienti 3D gratuitamente</h2>
+
+      <div class="func-group">
+
+        <!-- Left: software screenshot -->
+        <div class="func-pic">
+          <img src="images/example.webp"
+               alt="Esempio di progettazione 3D online – pianificatore di interni con modellazione 3D"
+               width="851" height="453" loading="lazy" />
+        </div>
+
+        <!-- Right: description + 2×2 feature grid + CTA -->
+        <div class="func-info">
+          <p class="func-desc">Crea i tuoi ambienti con il programma di modellazione 3D e visualizza il tuo design d'interni. Sperimenta disposizioni di mobili e rendering 3D dei tuoi spazi prima ancora di acquistare. Ecco cosa è incluso:</p>
+
+          <div class="func-grid">
+
+            <div class="func-item">
+              <div class="func-item-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none"
+                     stroke="rgb(74,80,89)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="3" width="20" height="14" rx="2"/>
+                  <path d="M8 21h8M12 17v4"/>
+                </svg>
+              </div>
+              <p class="func-item-desc">Piano 3D realistico</p>
+            </div>
+
+            <div class="func-item">
+              <div class="func-item-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none"
+                     stroke="rgb(74,80,89)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="9" height="9" rx="1"/>
+                  <rect x="13" y="2" width="9" height="9" rx="1"/>
+                  <rect x="2" y="13" width="9" height="9" rx="1"/>
+                  <rect x="13" y="13" width="9" height="9" rx="1"/>
+                </svg>
+              </div>
+              <p class="func-item-desc">Oltre 750 modelli di mobili</p>
+            </div>
+
+            <div class="func-item">
+              <div class="func-item-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none"
+                     stroke="rgb(74,80,89)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                </svg>
+              </div>
+              <p class="func-item-desc">Stima dei costi</p>
+            </div>
+
+            <div class="func-item">
+              <div class="func-item-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none"
+                     stroke="rgb(74,80,89)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+                  <line x1="12" y1="11" x2="12" y2="17"/>
+                  <line x1="9" y1="14" x2="15" y2="14"/>
+                </svg>
+              </div>
+              <p class="func-item-desc">Progetti demo pronti</p>
+            </div>
+
+          </div><!-- /func-grid -->
+
+          <a href="https://progettare-casa.it" class="btn-orange">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                 aria-hidden="true">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            Inizia subito – è gratis
+          </a>
+        </div><!-- /func-info -->
+
+      </div><!-- /func-group -->
+    </div>
+  </section>
+
+  <!-- ── Block 3: Guida passo dopo passo con immagini ──────── -->
+  <section class="steps-section" id="guida">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Guida rapida</span>
+        <h2>Come progettare casa passo dopo passo</h2>
+        <p>Con Progettare-Casa bastano competenze digitali di base per creare la tua planimetria professionale.</p>
+      </div>
+
+      <div class="steps-list">
+
+        <div class="step-card">
+          <div class="step-card-text">
+            <div class="step-number" aria-hidden="true">1</div>
+            <div class="step-content">
+              <h3>Disegna le pareti</h3>
+              <p>Definisci le dimensioni della stanza inserendo larghezza e lunghezza in metri quadri. Disegna le pareti con precisione millimetrica grazie alla griglia in scala integrata.</p>
+            </div>
+          </div>
+          <div class="step-card-image">
+            <img src="images/step1.webp"
+                 alt="Passo 1: Disegna le pareti nel pianificatore di casa online"
+                 loading="lazy" />
+          </div>
+        </div>
+
+        <div class="step-card step-card-reverse">
+          <div class="step-card-text">
+            <div class="step-number" aria-hidden="true">2</div>
+            <div class="step-content">
+              <h3>Aggiungi finestre e porte</h3>
+              <p>Posiziona porte e finestre nelle pareti per ottenere una planimetria 2D realistica del tuo spazio. Scegli tra diverse tipologie di aperture dal catalogo integrato.</p>
+            </div>
+          </div>
+          <div class="step-card-image">
+            <img src="images/step2.webp"
+                 alt="Passo 2: Aggiungi finestre e porte alla planimetria"
+                 loading="lazy" />
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-card-text">
+            <div class="step-number" aria-hidden="true">3</div>
+            <div class="step-content">
+              <h3>Posiziona i mobili</h3>
+              <p>Scegli i mobili dalla libreria di arredamento e sistemali nella stanza con un semplice drag and drop. Ruota, ridimensiona e prova quante combinazioni vuoi.</p>
+            </div>
+          </div>
+          <div class="step-card-image">
+            <img src="images/step3.webp"
+                 alt="Passo 3: Posiziona i mobili con drag and drop"
+                 loading="lazy" />
+          </div>
+        </div>
+
+        <div class="step-card step-card-reverse">
+          <div class="step-card-text">
+            <div class="step-number" aria-hidden="true">4</div>
+            <div class="step-content">
+              <h3>Aggiungi decorazioni e texture</h3>
+              <p>Personalizza pavimenti, pareti e mobili con texture e materiali dal catalogo — oltre 1.000 opzioni tra cui scegliere per dare carattere al tuo spazio.</p>
+            </div>
+          </div>
+          <div class="step-card-image">
+            <img src="images/step4.webp"
+                 alt="Passo 4: Aggiungi texture e materiali alla planimetria"
+                 loading="lazy" />
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-card-text">
+            <div class="step-number" aria-hidden="true">5</div>
+            <div class="step-content">
+              <h3>Salva e scarica il progetto</h3>
+              <p>Esporta la tua planimetria e visualizza lo spazio in 3D per avere un'idea realistica del risultato. Condividila con il tuo architetto, geometra o appaltatore.</p>
+            </div>
+          </div>
+          <div class="step-card-image">
+            <img src="images/step5.webp"
+                 alt="Passo 5: Salva e scarica la planimetria in 3D"
+                 loading="lazy" />
+          </div>
+        </div>
+
+      </div>
+
+      <div class="steps-cta">
+        <a href="#inizia" class="btn btn-primary">
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <polygon points="5 3 19 12 5 21 5 3"/>
+          </svg>
+          Prova gratis il pianificatore
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Block 4: Possibilità ───────────────────────────────── -->
+  <section class="possibilities-section" id="possibilita">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Possibilità</span>
+        <h2>Cosa puoi realizzare con Progettare-Casa</h2>
+        <p>Dalla planimetria 2D alla visualizzazione 3D: il nostro strumento copre ogni fase della progettazione interni.</p>
+      </div>
+
+      <div class="possibilities-grid">
+        <div class="possibility-card">
+          <div class="possibility-img">
+            <img src="images/possibilities1.webp"
+                 alt="Progettazione interni – pianificazione soggiorno in 2D"
+                 loading="lazy" />
+          </div>
+          <div class="possibility-body">
+            <h3>Progettazione interni 2D</h3>
+            <p>Crea planimetrie 2D in scala reale per qualsiasi stanza della casa, con misure precise al centimetro.</p>
+          </div>
+        </div>
+
+        <div class="possibility-card">
+          <div class="possibility-img">
+            <img src="images/possibilities2.webp"
+                 alt="Modellazione 3D e rendering 3D – interior design della camera da letto"
+                 loading="lazy" />
+          </div>
+          <div class="possibility-body">
+            <h3>Modellazione 3D e Rendering 3D</h3>
+            <p>Dalla planimetria 2D alla modellazione 3D completa: ottieni un rendering 3D realistico del tuo spazio direttamente nel browser, senza software aggiuntivi.</p>
+          </div>
+        </div>
+
+        <div class="possibility-card">
+          <div class="possibility-img">
+            <img src="images/possibilities3.webp"
+                 alt="Arredamento e texture – personalizzazione materiali"
+                 loading="lazy" />
+          </div>
+          <div class="possibility-body">
+            <h3>Arredamento e texture</h3>
+            <p>Scegli tra 300+ mobili e 1.000+ texture per personalizzare ogni stanza con il tuo stile unico.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Block 5: Strumenti professionali ─────────────────── -->
+  <section class="power-section" id="strumenti">
+    <div class="container">
+      <h2 class="power-title">Strumenti professionali per progettare i tuoi ambienti</h2>
+
+      <div class="power-grid">
+
+        <div class="power-item">
+          <div class="power-item-pic">
+            <img src="images/item-01.webp"
+                 alt="Progettazione individuale degli spazi – pianificatore di ambienti online"
+                 loading="lazy" width="363" height="203" />
+          </div>
+          <div class="power-item-info">
+            <h3 class="power-item-title">Progettazione individuale degli spazi</h3>
+            <p class="power-item-desc">Carica la planimetria esistente o disegna le pareti direttamente nello strumento online. Tutte le forme — rettangolari, ad L o personalizzate — si definiscono con precisione in metri quadri.</p>
+          </div>
+        </div>
+
+        <div class="power-item">
+          <div class="power-item-pic">
+            <img src="images/item-02.webp"
+                 alt="Superfici e materiali – oltre 1000 texture nel catalogo 3D"
+                 loading="lazy" width="363" height="203" />
+          </div>
+          <div class="power-item-info">
+            <h3 class="power-item-title">Superfici &amp; Materiali</h3>
+            <p class="power-item-desc">Nel pianificatore 3D scegli rivestimenti per pareti, pavimenti e soffitti da oltre 1000 texture nel catalogo. Integra anche materiali personalizzati per un effetto di rendering 3D realistico.</p>
+          </div>
+        </div>
+
+        <div class="power-item">
+          <div class="power-item-pic">
+            <img src="images/item-03.webp"
+                 alt="Ampia libreria di mobili – oltre 300 modelli 3D per interni"
+                 loading="lazy" width="363" height="203" />
+          </div>
+          <div class="power-item-info">
+            <h3 class="power-item-title">Ampia libreria di mobili</h3>
+            <p class="power-item-desc">Oltre 300 varianti di mobili disponibili nel software. Modifica dimensioni, colori e stili a piacere — dal design parametrico moderno fino al classico senza tempo.</p>
+          </div>
+        </div>
+
+        <div class="power-item">
+          <div class="power-item-pic">
+            <img src="images/item-04.webp"
+                 alt="Progettazione dell'illuminazione – lampade e punti luce nel piano 3D"
+                 loading="lazy" width="363" height="203" />
+          </div>
+          <div class="power-item-info">
+            <h3 class="power-item-title">Illuminazione</h3>
+            <p class="power-item-desc">Combina lampadari, applique e lampade da terra a tuo piacimento. Regola intensità e temperatura del colore per trovare la soluzione luminosa più confortevole per ogni stanza.</p>
+          </div>
+        </div>
+
+        <div class="power-item">
+          <div class="power-item-pic">
+            <img src="images/item-05.webp"
+                 alt="Impianti tecnici – prese e interruttori nella planimetria 2D"
+                 loading="lazy" width="363" height="203" />
+          </div>
+          <div class="power-item-info">
+            <h3 class="power-item-title">Impianti tecnici</h3>
+            <p class="power-item-desc">Posiziona prese, interruttori e punti luce secondo la planimetria elettrica. Imposta altezze e personalizza i componenti — utile per comunicare le esigenze impiantistiche all'ingegnere o all'architetto che si occuperà del progetto esecutivo certificato.</p>
+          </div>
+        </div>
+
+        <div class="power-item">
+          <div class="power-item-pic">
+            <img src="images/item-06.webp"
+                 alt="Preventivo dei costi – stima spese ristrutturazione"
+                 loading="lazy" width="363" height="203" />
+          </div>
+          <div class="power-item-info">
+            <h3 class="power-item-title">Preventivo dei costi</h3>
+            <p class="power-item-desc">Pianifica il budget tenendo conto di manodopera e materiali. Crea elenchi d'acquisto per ogni stanza e ottimizza le spese — ottimo punto di partenza per discutere il budget con il professionista abilitato che seguirà la pratica ufficiale.</p>
+          </div>
+        </div>
+
+      </div><!-- /power-grid -->
+    </div>
+  </section>
+
+  <!-- ── Block 6: Funzionalità chiave ──────────────────────── -->
+  <section class="key-features" id="funzionalita">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Funzionalità</span>
+        <h2>Software per progettare casa: funzionalità avanzate, uso gratuito</h2>
+        <p>Tutto ciò di cui hai bisogno per progettare il tuo spazio abitativo, senza spendere un euro.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feat-card">
+          <div class="feat-icon">
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24"
+                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <h3>Risparmio di tempo</h3>
+          <p>Pianifica il tuo spazio abitativo in pochi minuti, senza appuntamenti con professionisti costosi. La progettazione interni diventa immediata.</p>
+        </div>
+
+        <div class="feat-card">
+          <div class="feat-icon">
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24"
+                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <path d="M3 3h18v18H3z"/><path d="M3 9h18M9 3v18"/>
+            </svg>
+          </div>
+          <h3>Progettazione interni precisa</h3>
+          <p>Lavora con misure reali e principi di design parametrico: ottieni un progetto fedele alla realtà, perfetto per la ristrutturazione, il trasloco o la presentazione a un professionista.</p>
+        </div>
+
+        <div class="feat-card">
+          <div class="feat-icon">
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24"
+                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15 15 0 0 0 0 20M12 2a15 15 0 0 1 0 20"/>
+            </svg>
+          </div>
+          <h3>Strumento online gratuito</h3>
+          <p>Nessun software da installare. Accedi dal browser — Windows, Mac o Linux — e inizia subito a progettare casa gratuitamente.</p>
+        </div>
+
+        <div class="feat-card">
+          <div class="feat-icon">
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24"
+                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <rect x="2" y="7" width="6" height="8" rx="1"/>
+              <rect x="9" y="4" width="6" height="11" rx="1"/>
+              <rect x="16" y="9" width="6" height="6" rx="1"/>
+            </svg>
+          </div>
+          <h3>Libreria arredamento</h3>
+          <p>Oltre 300 modelli di mobili e arredamento da posizionare liberamente. Sperimenta diversi stili prima dell'acquisto arredamento definitivo.</p>
+        </div>
+
+        <div class="feat-card">
+          <div class="feat-icon">
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24"
+                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+          </div>
+          <h3>Visualizzazione prima dell'acquisto</h3>
+          <p>Il nostro strumento per progettare casa ti permette di sperimentare senza costi: cambia layout, colori e arredamento finché non sei soddisfatto.</p>
+        </div>
+
+        <div class="feat-card">
+          <div class="feat-icon">
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24"
+                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5"/>
+              <path d="M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <h3>Ottimizzazione dello spazio</h3>
+          <p>Esplora il minimalismo e l'ergonomia degli spazi abitativi: massimizza ogni metro quadro e trova il layout perfetto per la tua casa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Block 7: Requisiti tecnici con icone SVG ───────────── -->
+  <section class="tech-requirements" id="requisiti">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Accesso facile</span>
+        <h2>Requisiti tecnici</h2>
+        <p>Il nostro software per progettare casa funziona su qualsiasi dispositivo dotato di browser moderno. Nessun requisito hardware specifico.</p>
+      </div>
+
+      <div class="tech-icons-row">
+        <div class="tech-icon-card">
+          <div class="tech-icon-img">
+            <img src="images/tech1.svg" alt="Browser web moderno" loading="lazy" />
+          </div>
+          <h3>Browser moderno</h3>
+          <p>Chrome, Firefox, Safari o Edge. Nessun plugin o estensione richiesta per progettare casa.</p>
+        </div>
+
+        <div class="tech-icon-card">
+          <div class="tech-icon-img">
+            <img src="images/tech2.svg" alt="Sistemi operativi Windows Mac Linux" loading="lazy" />
+          </div>
+          <h3>Tutti i sistemi operativi</h3>
+          <p>Windows, Mac e Linux: il nostro strumento per progettare interni funziona su qualsiasi sistema.</p>
+        </div>
+
+        <div class="tech-icon-card">
+          <div class="tech-icon-img">
+            <img src="images/tech3.svg" alt="Nessun download richiesto" loading="lazy" />
+          </div>
+          <h3>Nessun download</h3>
+          <p>Accedi direttamente dal browser senza installazioni o registrazioni obbligatorie.</p>
+        </div>
+
+        <div class="tech-icon-card">
+          <div class="tech-icon-img">
+            <img src="images/tech4.svg" alt="Qualsiasi dispositivo – PC tablet laptop" loading="lazy" />
+          </div>
+          <h3>Qualsiasi dispositivo</h3>
+          <p>Funziona su PC, laptop e tablet. Non richiede GPU dedicata né hardware di fascia alta.</p>
+        </div>
+      </div>
+
+      <div class="tech-note-bar">
+        <p>Dopo aver creato la planimetria 2D delle tue stanze, puoi visualizzarle in 3D direttamente nel browser. Il nostro strumento online è il complemento ideale a qualsiasi software di visualizzazione professionale.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Block 8: Galleria pianificatore ───────────────────── -->
+  <section class="planner-gallery-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Galleria</span>
+        <h2>Il tuo pianificatore di ambienti in azione</h2>
+        <p>Guarda come altri utenti hanno progettato i loro spazi con Progettare-Casa.</p>
+      </div>
+      <div class="planner-gallery">
+        <div class="planner-gallery-item">
+          <img src="images/flat-planner3.webp" alt="Pianificatore di ambienti – esempio planimetria appartamento" loading="lazy" />
+        </div>
+        <div class="planner-gallery-item">
+          <img src="images/flat-planner4.webp" alt="Pianificatore stanza – soggiorno con divano" loading="lazy" />
+        </div>
+        <div class="planner-gallery-item">
+          <img src="images/flat-planner5.webp" alt="Pianificatore stanza – camera da letto" loading="lazy" />
+        </div>
+        <div class="planner-gallery-item">
+          <img src="images/flat-planner6.webp" alt="Pianificatore stanza – cucina" loading="lazy" />
+        </div>
+        <div class="planner-gallery-item">
+          <img src="images/flat-planner7.webp" alt="Pianificatore stanza – home office" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Block 9: Catalogo stanze ──────────────────────────── -->
+  <section class="room-catalog" id="stanze">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Catalogo stanze</span>
+        <h2>Dalla cucina alla camera da letto: progetta ogni stanza online</h2>
+        <p>Il nostro strumento online copre tutti gli ambienti della casa. Scegli la stanza che vuoi progettare e inizia subito.</p>
+      </div>
+
+      <div class="rooms-grid">
+
+        <a href="camera-da-letto.html" class="room-card">
+          <div class="room-img">
+            <img src="images/bedroom-sample.webp"
+                 alt="Camera da letto – progetta il tuo dormitorio online in 2D e 3D"
+                 loading="lazy" width="350" height="220" />
+          </div>
+          <div class="room-label">
+            <h3>Camera da letto</h3>
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"
+                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
+          </div>
+        </a>
+
+        <a href="cucina.html" class="room-card">
+          <div class="room-img">
+            <img src="images/kitchen-sample.webp"
+                 alt="Cucina – pianifica la cucina ideale con il software 3D online"
+                 loading="lazy" width="350" height="220" />
+          </div>
+          <div class="room-label">
+            <h3>Cucina</h3>
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"
+                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
+          </div>
+        </a>
+
+        <a href="soggiorno.html" class="room-card">
+          <div class="room-img">
+            <img src="images/living-room-sample.webp"
+                 alt="Soggiorno – arredo e design del salotto con pianificatore online"
+                 loading="lazy" width="350" height="220" />
+          </div>
+          <div class="room-label">
+            <h3>Soggiorno</h3>
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"
+                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
+          </div>
+        </a>
+
+        <a href="cameretta.html" class="room-card">
+          <div class="room-img">
+            <img src="images/kids-room-sample.webp"
+                 alt="Cameretta – progetta la stanza dei bambini in 2D e 3D"
+                 loading="lazy" width="350" height="220" />
+          </div>
+          <div class="room-label">
+            <h3>Cameretta</h3>
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"
+                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
+          </div>
+        </a>
+
+        <a href="bagno.html" class="room-card">
+          <div class="room-img">
+            <img src="images/bathroom-sample.webp"
+                 alt="Bagno – pianifica il bagno ideale con il software di design online"
+                 loading="lazy" width="350" height="220" />
+          </div>
+          <div class="room-label">
+            <h3>Bagno</h3>
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"
+                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
+          </div>
+        </a>
+
+        <a href="studio.html" class="room-card">
+          <div class="room-img">
+            <img src="images/office-sample.webp"
+                 alt="Studio / Home Office – progetta il tuo ufficio in casa online"
+                 loading="lazy" width="350" height="220" />
+          </div>
+          <div class="room-label">
+            <h3>Studio / Home Office</h3>
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"
+                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ── Block: Dalla planimetria al Comune ────────────────── -->
+  <section class="buro-section" id="pratiche">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Pratiche e documentazione</span>
+        <h2>Dalla planimetria all'architetto: cosa puoi fare con Progettare-Casa</h2>
+        <p>Le nostre planimetrie 2D riproducono gli spazi con dimensioni esatte e trasmettono l'idea progettuale in modo chiaro. Non sostituiscono la firma di un tecnico abilitato: per il permesso di costruire, il bonus ristrutturazione e le pratiche catastali serve sempre un ingegnere, architetto o geometra iscritto all'albo.</p>
+      </div>
+
+      <div class="buro-grid">
+
+        <div class="buro-card">
+          <div class="buro-icon">
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" width="26" height="26"
+                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="9" y1="13" x2="15" y2="13"/>
+              <line x1="9" y1="17" x2="13" y2="17"/>
+            </svg>
+          </div>
+          <h3>Permesso di costruire</h3>
+          <p>Il Comune non accetta planimetrie non certificate per il rilascio del permesso di costruire. Con Progettare-Casa crei una planimetria con dimensioni reali e layout chiari da consegnare al tuo architetto o geometra, che la trasformerà negli elaborati tecnici firmati necessari per la pratica ufficiale.</p>
+        </div>
+
+        <div class="buro-card">
+          <div class="buro-icon">
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" width="26" height="26"
+                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <line x1="12" y1="1" x2="12" y2="23"/>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <h3>Bonus ristrutturazione</h3>
+          <p>Il bonus ristrutturazione richiede per legge documentazione firmata da un ingegnere, architetto o geometra abilitato. Progettare-Casa ti aiuta a preparare l'idea progettuale — con misure precise e layout chiari — da portare al professionista, riducendo i tempi di briefing e i costi di redazione del progetto definitivo.</p>
+        </div>
+
+        <div class="buro-card">
+          <div class="buro-icon">
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" width="26" height="26"
+                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <path d="M3 9h18M3 15h18M9 3v18M15 3v18"/>
+            </svg>
+          </div>
+          <h3>Catasto italiano</h3>
+          <p>Ogni immobile in Italia ha una planimetria catastale ufficiale. Usa Progettare-Casa per visualizzare e confrontare le dimensioni del tuo spazio con i dati del Catasto italiano. Qualsiasi variazione o aggiornamento della planimetria catastale richiede però l'intervento obbligatorio di un tecnico abilitato.</p>
+        </div>
+
+        <div class="buro-card">
+          <div class="buro-icon">
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" width="26" height="26"
+                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <path d="M3 21h18"/>
+              <path d="M5 21V7l8-4v18"/>
+              <path d="M19 21V11l-6-4"/>
+              <path d="M9 9v.01M9 12v.01M9 15v.01M9 18v.01"/>
+            </svg>
+          </div>
+          <h3>Comune</h3>
+          <p>Le pratiche edilizie presentate al Comune devono essere firmate da un professionista abilitato e rispettare le normative urbanistiche locali. Con Progettare-Casa organizzi l'idea progettuale con dimensioni reali, poi la consegni all'architetto o geometra che redigerà la documentazione ufficiale richiesta dagli uffici comunali.</p>
+        </div>
+
+      </div>
+
+      <div class="buro-note">
+        <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"
+             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="8" x2="12" y2="12"/>
+          <line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>
+        <p><strong>Nota legale:</strong> Progettare-Casa genera planimetrie con dimensioni esatte per uso progettuale e comunicativo. Non si tratta di elaborati tecnici certificati. Per qualsiasi pratica ufficiale — permesso di costruire, bonus fiscali, variazioni catastali, SCIA — è obbligatorio l'intervento di un professionista abilitato e iscritto all'albo (ingegnere, architetto o geometra).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA Banner ─────────────────────────────────────────── -->
+  <section class="cta-banner">
+    <h2>Inizia a progettare casa gratis oggi</h2>
+    <p>Unisciti a oltre 50.000 utenti che usano Progettare-Casa per dare forma alle loro idee. Nessun download, nessun costo.</p>
+    <a href="#inizia" class="btn btn-primary">
+      <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"
+           fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <polygon points="5 3 19 12 5 21 5 3"/>
+      </svg>
+      Apri il pianificatore
+    </a>
+  </section>
+
+  <!-- ── Block 11: FAQ ──────────────────────────────────────── -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">FAQ</span>
+        <h2>Domande frequenti su Progettare-Casa</h2>
+        <p>Hai ancora dubbi? Leggi le risposte alle domande più comuni.</p>
+      </div>
+
+      <div class="faq-inner">
+        <details>
+          <summary>
+            È gratuito usare il pianificatore di ambienti online?
+            <svg class="icon faq-icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"
+                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+          </summary>
+          <div class="faq-answer">
+            <p>Sì, Progettare-Casa è completamente gratuito. Non è necessario scaricare software: funziona direttamente nel browser, senza registrazione obbligatoria. Accedi e inizia subito a progettare casa.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            Posso usare il software per progettare casa su Mac e Windows?
+            <svg class="icon faq-icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"
+                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+          </summary>
+          <div class="faq-answer">
+            <p>Sì. Il nostro strumento online è compatibile con tutti i sistemi operativi: Windows, Mac e Linux. È sufficiente un browser moderno come Chrome, Firefox, Safari o Edge. Nessun requisito hardware specifico richiesto.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            Posso creare una planimetria 3D?
+            <svg class="icon faq-icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"
+                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+          </summary>
+          <div class="faq-answer">
+            <p>Sì. Dopo aver disegnato la tua planimetria 2D, puoi visualizzare lo spazio in 3D direttamente nel browser per avere un'idea realistica del risultato finale prima di acquistare arredamento o avviare lavori.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            Progettare-Casa è adatto ai professionisti (architetti, interior designer, geometri)?
+            <svg class="icon faq-icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"
+                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+          </summary>
+          <div class="faq-answer">
+            <p>Assolutamente. Architetti, interior designer e geometri usano Progettare-Casa per comunicare idee di progettazione interni ai clienti, creare bozze rapide di planimetrie e condividere i progetti prima della fase CAD professionale.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            Posso progettare ogni tipo di stanza?
+            <svg class="icon faq-icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"
+                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+          </summary>
+          <div class="faq-answer">
+            <p>Sì: camera da letto, cucina, soggiorno, cameretta, bagno e studio / home office. Ogni tipo di stanza dispone di elementi di arredamento dedicati e texture appropriate nel catalogo.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            Progettare-Casa è adatto anche a chi non ha esperienza di design?
+            <svg class="icon faq-icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"
+                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+          </summary>
+          <div class="faq-answer">
+            <p>Certamente. Il nostro strumento richiede solo competenze digitali di base. L'interfaccia è intuitiva e guidata passo dopo passo: chiunque può creare una planimetria professionale in pochi minuti, anche senza esperienza di progettazione CAD o interior design.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            Come posso usare Progettare-Casa per richiedere il bonus ristrutturazione?
+            <svg class="icon faq-icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"
+                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+          </summary>
+          <div class="faq-answer">
+            <p>Progettare-Casa crea planimetrie con dimensioni precise che puoi usare come base visiva per il progetto di ristrutturazione. Ti aiutano a comunicare l'idea in modo chiaro al professionista — ingegnere, architetto o geometra — che dovrà redigere e firmare tutta la documentazione ufficiale richiesta per il bonus ristrutturazione. La firma di un tecnico abilitato è obbligatoria per legge: le nostre planimetrie non sostituiscono gli elaborati tecnici certificati.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            La planimetria creata con Progettare-Casa è valida per il permesso di costruire e il Comune?
+            <svg class="icon faq-icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"
+                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+          </summary>
+          <div class="faq-answer">
+            <p>Le planimetrie di Progettare-Casa riproducono gli spazi con dimensioni reali e sono un'ottima base visiva da condividere con l'architetto o il geometra. Non sono elaborati tecnici validi per la presentazione ufficiale al Comune: il permesso di costruire, la SCIA e qualsiasi pratica edilizia richiedono documentazione firmata da un professionista iscritto all'albo. Il nostro strumento accelera la fase di briefing con il tecnico e riduce i tempi di redazione, ma non sostituisce il lavoro dell'ufficio tecnico.</p>
+          </div>
+        </details>
+
+        <p style="margin-top:28px; text-align:center;">
+          <a href="contatti.html">Hai altre domande? Contattaci →</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">Progettare-Casa</a>
+      <p>Il pianificatore di ambienti online gratuito per progettare casa in 2D e visualizzarla in 3D. Senza installazioni, senza costi.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Strumento</h4>
+      <ul>
+        <li><a href="index.html#come-funziona">Come funziona</a></li>
+        <li><a href="index.html#guida">Guida passo dopo passo</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="index.html#inizia">Inizia gratis</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Informazioni</h4>
+      <ul>
+        <li><a href="chi-siamo.html">Chi siamo</a></li>
+        <li><a href="contatti.html">Contatti</a></li>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Scopri</h4>
+      <ul>
+        <li><a href="index.html#possibilita">Funzionalità</a></li>
+        <li><a href="index.html#stanze">Galleria stanze</a></li>
+        <li><a href="index.html#strumenti">Libreria arredi</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Progettare-Casa.it — Tutti i diritti riservati. Il pianificatore di interni online gratuito per l'Italia.</p>
+  </div>
+</footer>
+
+</body>
+</html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   

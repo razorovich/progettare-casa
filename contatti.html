@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contatti – Progettare-Casa | Assistenza e Supporto</title>
+  <meta name="description" content="Contatta il team di Progettare-Casa per assistenza, supporto tecnico o partnership. Siamo qui per aiutarti a progettare casa online.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://progettare-casa.it/contatti.html">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/progettare-casa.css">
+  <style>
+    /* ── Contacts page extra styles ── */
+    .contacts-hero {
+      background: linear-gradient(135deg, #f0f4ff 0%, #ffffff 60%);
+      padding: 64px 20px 48px;
+      text-align: center;
+    }
+    .contacts-hero h1 { margin-bottom: 16px; }
+    .contacts-hero p { max-width: 560px; margin: 0 auto; font-size: 1.05rem; }
+
+    .dept-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: var(--container);
+      margin: 0 auto;
+    }
+    .dept-card {
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      background: #fff;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .dept-icon {
+      width: 52px; height: 52px;
+      border-radius: 12px;
+      background: var(--color-bg-alt);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--color-primary);
+    }
+    .dept-card h3 { font-size: 1.05rem; margin: 0; }
+    .dept-card p { margin: 0; font-size: .93rem; }
+    .dept-email {
+      font-size: .9rem;
+      color: var(--color-primary);
+      font-weight: 600;
+      display: flex; align-items: center; gap: 6px;
+      margin-top: auto;
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 48px;
+      max-width: var(--container);
+      margin: 0 auto;
+    }
+
+    .contact-form {
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 36px;
+      box-shadow: var(--shadow-sm);
+    }
+    .contact-form h2 { margin-bottom: 24px; font-size: 1.4rem; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      font-size: .9rem;
+      color: var(--color-text);
+      margin-bottom: 6px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      font-size: .95rem;
+      font-family: inherit;
+      color: var(--color-text);
+      background: #fff;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 3px rgba(37,99,235,.1);
+    }
+    .form-group textarea { resize: vertical; min-height: 140px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-submit { margin-top: 8px; }
+    .form-submit .btn { width: 100%; justify-content: center; }
+    .form-note { font-size: .82rem; color: var(--color-text-muted); margin-top: 12px; text-align: center; }
+
+    .contact-sidebar { display: flex; flex-direction: column; gap: 20px; }
+    .info-card {
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+    .info-card h3 { font-size: 1rem; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+    .hours-table { width: 100%; border-collapse: collapse; }
+    .hours-table td { padding: 6px 0; font-size: .9rem; color: var(--color-text-muted); }
+    .hours-table td:first-child { font-weight: 600; color: var(--color-text); }
+    .hours-table tr:not(:last-child) td { border-bottom: 1px solid var(--color-border); }
+    .online-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: #dcfce7; color: #15803d;
+      padding: 5px 12px; border-radius: 100px; font-size: .82rem; font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .online-dot {
+      width: 8px; height: 8px; border-radius: 50%; background: #22c55e;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%,100% { opacity:1; }
+      50% { opacity:.4; }
+    }
+
+    .faq-before { background: var(--color-bg-alt); }
+    .faq-before-inner { max-width: 700px; margin: 0 auto; }
+
+    @media (max-width: 768px) {
+      .dept-grid { grid-template-columns: 1fr; }
+      .contact-layout { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .dept-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="site-nav" aria-label="Navigazione principale">
+    <a href="index.html" class="logo">Progettare-Casa</a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" aria-label="Apri menu">
+    <label for="nav-toggle" class="nav-toggle-label" aria-label="Menu">
+      <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24"
+           fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </label>
+    <ul class="nav-links">
+      <li><a href="index.html#come-funziona">Come funziona</a></li>
+      <li><a href="index.html#funzionalita">Funzionalità</a></li>
+      <li><a href="index.html#stanze">Stanze</a></li>
+      <li><a href="index.html#faq">FAQ</a></li>
+      <li><a href="chi-siamo.html">Chi siamo</a></li>
+      <li><a href="contatti.html" aria-current="page">Contatti</a></li>
+      <li><a href="index.html#inizia" class="nav-cta">Inizia gratis</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <!-- Hero -->
+  <section class="contacts-hero">
+    <span class="section-label">Siamo qui per te</span>
+    <h1>Contatta il team di Progettare-Casa</h1>
+    <p>Hai una domanda sullo strumento, hai bisogno di assistenza tecnica o sei interessato a una partnership? Scrivici: ti risponderemo entro 24 ore lavorative.</p>
+  </section>
+
+  <!-- Department cards -->
+  <section style="background:#fff; padding: 60px 20px;">
+    <div class="dept-grid">
+      <div class="dept-card">
+        <div class="dept-icon">
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" width="26" height="26"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+        </div>
+        <h3>Informazioni generali</h3>
+        <p>Per qualsiasi domanda generale sul servizio, sulle funzionalità o sull'utilizzo di Progettare-Casa.</p>
+        <a href="mailto:info@progettare-casa.it" class="dept-email">
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          info@progettare-casa.it
+        </a>
+      </div>
+
+      <div class="dept-card">
+        <div class="dept-icon">
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" width="26" height="26"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+          </svg>
+        </div>
+        <h3>Supporto tecnico</h3>
+        <p>Hai un problema tecnico con il pianificatore? Il nostro team di supporto ti aiuterà a risolverlo rapidamente.</p>
+        <a href="mailto:supporto@progettare-casa.it" class="dept-email">
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          supporto@progettare-casa.it
+        </a>
+      </div>
+
+      <div class="dept-card">
+        <div class="dept-icon">
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" width="26" height="26"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <h3>Partnership e collaborazioni</h3>
+        <p>Sei un'agenzia immobiliare, uno studio di architettura o un'impresa edile? Contattaci per esplorare opportunità di collaborazione.</p>
+        <a href="mailto:partnership@progettare-casa.it" class="dept-email">
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          partnership@progettare-casa.it
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact form + sidebar -->
+  <section style="background: var(--color-bg-alt); padding: 60px 20px;">
+    <div class="contact-layout">
+      <div class="contact-form">
+        <h2>Inviaci un messaggio</h2>
+        <form action="#" method="POST" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nome">Nome *</label>
+              <input type="text" id="nome" name="nome" required placeholder="Il tuo nome" autocomplete="given-name">
+            </div>
+            <div class="form-group">
+              <label for="cognome">Cognome</label>
+              <input type="text" id="cognome" name="cognome" placeholder="Il tuo cognome" autocomplete="family-name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required placeholder="nome@esempio.it" autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="oggetto">Argomento *</label>
+            <select id="oggetto" name="oggetto" required>
+              <option value="" disabled selected>Seleziona un argomento</option>
+              <option value="informazioni">Informazioni generali</option>
+              <option value="supporto">Supporto tecnico</option>
+              <option value="partnership">Partnership e collaborazioni</option>
+              <option value="altro">Altro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="messaggio">Messaggio *</label>
+            <textarea id="messaggio" name="messaggio" required placeholder="Descrivi la tua richiesta in dettaglio..."></textarea>
+          </div>
+          <div class="form-submit">
+            <button type="submit" class="btn btn-primary">
+              <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"
+                   fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <line x1="22" y1="2" x2="11" y2="13"/>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+              </svg>
+              Invia il messaggio
+            </button>
+          </div>
+          <p class="form-note">* Campi obbligatori. Risponderemo entro 24 ore lavorative.</p>
+        </form>
+      </div>
+
+      <aside class="contact-sidebar">
+        <div class="info-card">
+          <div class="online-badge">
+            <span class="online-dot"></span>
+            Servizio online
+          </div>
+          <h3>
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"
+                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+            </svg>
+            Orari di assistenza
+          </h3>
+          <table class="hours-table">
+            <tbody>
+              <tr><td>Lunedì – Venerdì</td><td>9:00 – 18:00 (CET)</td></tr>
+              <tr><td>Sabato</td><td>10:00 – 14:00 (CET)</td></tr>
+              <tr><td>Domenica</td><td>Chiuso</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="info-card">
+          <h3>
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"
+                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.28 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.54a16 16 0 0 0 5.55 5.55l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            Tempi di risposta
+          </h3>
+          <p style="font-size:.9rem;">Rispondiamo a tutte le email entro <strong>24 ore lavorative</strong>. Per problemi urgenti, indicalo nell'oggetto del messaggio.</p>
+        </div>
+
+        <div class="info-card">
+          <h3>
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"
+                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+              <line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+            Hai bisogno di aiuto subito?
+          </h3>
+          <p style="font-size:.9rem; margin-bottom:12px;">Consulta le domande frequenti: probabilmente troverai subito la risposta che cerchi.</p>
+          <a href="index.html#faq" class="btn btn-outline" style="font-size:.9rem; padding:10px 18px;">Vai alle FAQ →</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- FAQ prima di contattarci -->
+  <section class="faq-before" style="padding: 60px 20px;">
+    <div class="faq-before-inner">
+      <div class="section-header">
+        <span class="section-label">Prima di scrivere</span>
+        <h2>Le domande più comuni</h2>
+      </div>
+
+      <details>
+        <summary>
+          Il servizio Progettare-Casa è davvero gratuito?
+          <svg class="icon faq-icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+          </svg>
+        </summary>
+        <div class="faq-answer"><p>Sì, Progettare-Casa è completamente gratuito. Puoi accedere a tutte le funzionalità base senza alcun costo, direttamente dal browser.</p></div>
+      </details>
+
+      <details>
+        <summary>
+          Ho un problema tecnico con il pianificatore: cosa devo fare?
+          <svg class="icon faq-icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+          </svg>
+        </summary>
+        <div class="faq-answer"><p>Scrivici a <a href="mailto:supporto@progettare-casa.it">supporto@progettare-casa.it</a> descrivendo il problema e il browser che stai usando. Ti risponderemo entro 24 ore lavorative.</p></div>
+      </details>
+
+      <details>
+        <summary>
+          Posso integrare Progettare-Casa nel mio sito immobiliare?
+          <svg class="icon faq-icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+          </svg>
+        </summary>
+        <div class="faq-answer"><p>Per opportunità di partnership e integrazioni, contattaci a <a href="mailto:partnership@progettare-casa.it">partnership@progettare-casa.it</a>. Lavoriamo con agenzie immobiliari, studi di architettura e imprese edili.</p></div>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand footer-col">
+      <a href="index.html" class="logo">Progettare-Casa</a>
+      <p>Lo strumento online gratuito per progettare casa, creare planimetrie 2D e visualizzarle in 3D.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Strumento</h4>
+      <nav aria-label="Link strumento footer">
+        <ul>
+          <li><a href="index.html#come-funziona">Come funziona</a></li>
+          <li><a href="index.html#funzionalita">Funzionalità</a></li>
+          <li><a href="index.html#guida">Guida passo dopo passo</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-col">
+      <h4>Stanze</h4>
+      <nav aria-label="Link stanze footer">
+        <ul>
+          <li><a href="camera-da-letto.html">Camera da letto</a></li>
+          <li><a href="cucina.html">Cucina</a></li>
+          <li><a href="soggiorno.html">Soggiorno</a></li>
+          <li><a href="bagno.html">Bagno</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-col">
+      <h4>Azienda</h4>
+      <nav aria-label="Link azienda footer">
+        <ul>
+          <li><a href="chi-siamo.html">Chi siamo</a></li>
+          <li><a href="contatti.html" aria-current="page">Contatti</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="privacy-policy.html#cookie">Cookie Policy</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="footer-bottom container">
+    <p>© 2026 Progettare-Casa. Tutti i diritti riservati. | <a href="privacy-policy.html" style="color:#475569;">Privacy Policy</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
